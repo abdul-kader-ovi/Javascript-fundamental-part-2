@@ -204,3 +204,69 @@ console.log(john);
 
 
 console.log(`${john.firstName} has ${john.friends.length} friends, and his best friend is ${john.friends[0]}`);
+ 
+
+
+//-----------------Object Method--------------------
+
+const john2={
+   firstName:'John',
+   lastName:'Snow',
+   birthYear:1980,
+   job:'Teacher',
+   friends:['Sansa', 'Aria', 'Hodor', 'Dany'],
+   hasDriverLicense:true,
+   calcAge:function(){
+      this.age= 2025-this.birthYear;
+      return this.age;
+   },
+   // getDriverLicense:function(){
+   //    if(this.hasDriverLicense){
+   //       return `${this.firstName} is a ${this.calcAge()} year old ${this.job} & he has a driver's license.`;
+   //    }else{
+   //       return `${this.firstName} is a ${this.calcAge()} year old ${this.job} & he doesn't have a driver's license.`;
+   //    }
+   // }
+
+   getDriverLicense:function(){
+      return `${this.firstName} is a ${this.job} and he has ${this.hasDriverLicense ? 'a':'no'} driver license.`;
+   }
+}
+
+console.log(john2.calcAge());
+console.log(john2.age);
+console.log(john2.age);
+console.log(john2.age);
+
+console.log(john2.getDriverLicense());
+
+
+
+const mark={
+   fullName:'Mark',
+   mass:78,
+   height:1.69,
+   calcBMI:function(){
+      this.bmi=this.mass/this.height**2;
+      return this.bmi;
+   }
+}
+
+const smith={
+   fullName:'Smith',
+   mass:88,
+   height:1.69,
+   calcBMI:function(){
+      this.bmi=this.mass/this.height**2;
+      return this.bmi;
+   }
+}
+
+console.log(mark.calcBMI());
+console.log(smith.calcBMI());
+
+if(mark.calcBMI()>smith.calcBMI()){
+   console.log(`Mark BMI ${mark.calcBMI()} is higher than Smith's BMI ${smith.calcBMI()}`);
+}else{
+   console.log(`Smith's BMI ${smith.calcBMI()} is higher than Mark BMI ${mark.calcBMI()}`);
+}
